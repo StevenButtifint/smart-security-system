@@ -16,6 +16,10 @@ class GUI:
         self.video_label.place(relx=0.5, rely=0.5, relw=1, relh=1, anchor='c')
 
 
+        tools_frame = tk.Frame(self.window, bg=TOOLBAR_BG)
+        tools_frame.place(relx=0, rely=0, relw=1, relh=0.041, anchor="nw")
+
+
 
 if __name__ == '__main__':
     root = tk.Tk()
