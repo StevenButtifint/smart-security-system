@@ -24,6 +24,11 @@ class GUI:
         source_label.place(relx=0.005, rely=0.06, anchor="nw")
 
 
+        detector_label = tk.Label(tools_frame, text="Detector:", bg=TOOLBAR_BG, fg=TOOLBAR_FG)
+        detector_label.config(font=font.Font(slant="italic", size=13))
+        detector_label.place(relx=0.24, rely=0.06, anchor="nw")
+
+
 
 if __name__ == '__main__':
     root = tk.Tk()
