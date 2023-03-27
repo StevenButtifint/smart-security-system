@@ -29,6 +29,11 @@ class GUI:
         detector_label.place(relx=0.24, rely=0.06, anchor="nw")
 
 
+        events_label = tk.Label(tools_frame, text="Events Log", bg=TOOLBAR_BG, fg="white")
+        events_label.config(font=font.Font(slant="italic", size=15))
+        events_label.place(relx=0.71, rely=0.037, anchor="nw")
+
+
 
 if __name__ == '__main__':
     root = tk.Tk()
