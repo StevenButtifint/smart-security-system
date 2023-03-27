@@ -19,6 +19,10 @@ class GUI:
         tools_frame = tk.Frame(self.window, bg=TOOLBAR_BG)
         tools_frame.place(relx=0, rely=0, relw=1, relh=0.041, anchor="nw")
 
+        source_label = tk.Label(tools_frame, text="Source:", bg=TOOLBAR_BG, fg=TOOLBAR_FG)
+        source_label.config(font=font.Font(slant="italic", size=13))
+        source_label.place(relx=0.005, rely=0.06, anchor="nw")
+
 
 
 if __name__ == '__main__':
