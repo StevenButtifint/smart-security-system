@@ -34,3 +34,6 @@ class EventWidget:
     def clear_type(self):
         self.type.config(text=EMPTY_TYPE)
 
+    def clear_time(self):
+        self.time.config(text=EMPTY_TIME)
+
