@@ -31,3 +31,6 @@ class EventWidget:
         self.date = tk.Label(self.window, text=EMPTY_DATE, bg=TAB_BG_SELECTED, font=('Corbel', 16))
         self.date.place(relx=0.6, rely=0.45, anchor="w")
 
+    def clear_type(self):
+        self.type.config(text=EMPTY_TYPE)
+
