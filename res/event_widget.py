@@ -49,3 +49,6 @@ class EventWidget:
     def set_time(self, content):
         self.time.config(text=content)
 
+    def set_date(self, content):
+        self.date.config(text=content)
+
