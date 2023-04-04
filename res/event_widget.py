@@ -43,3 +43,6 @@ class EventWidget:
         self.clear_date()
         self.clear_time()
 
+    def set_type(self, content):
+        self.type.config(text=content)
+
