@@ -40,3 +40,8 @@ class EventWidget:
     def clear_date(self):
         self.date.config(text=EMPTY_DATE)
 
+    def clear_labels(self):
+        self.clear_type()
+        self.clear_date()
+        self.clear_time()
+
