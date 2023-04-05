@@ -2,6 +2,7 @@ import tkinter as tk
 from PIL import Image, ImageTk
 
 from res.constants import *
+from res.operations import resource_path
 
 
 class EventWidget:
@@ -53,7 +54,7 @@ class EventWidget:
         self.date.config(text=content)
 
     def set_preview(self):
-        img = Image.open("res/detections/last_event.png")
+        img = Image.open(resource_path(LAST_EVENT_DIR))
         img = img.resize((225, 225))
         b = ImageTk.PhotoImage(img)
         self.event_frame.configure(image=b)
