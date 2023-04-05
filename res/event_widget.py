@@ -52,3 +52,9 @@ class EventWidget:
     def set_date(self, content):
         self.date.config(text=content)
 
+    def set_preview(self):
+        img = Image.open("res/detections/last_event.png")
+        img = img.resize((225, 225))
+        b = ImageTk.PhotoImage(img)
+        self.event_frame.configure(image=b)
+        self.event_frame._image_cache = b
