@@ -14,7 +14,7 @@
 
 ### Description
 
-*coming soon*
+This application provides a means for detecting objects live through a camera or local video file. Events get recorded and displayed to the user allowing them to manage and review events that have occurred. This application uses Python with Tkinter. Objects get identified using the YOLOv5 real-time object detection model. 
 
 ---
 
