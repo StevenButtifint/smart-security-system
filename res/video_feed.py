@@ -28,3 +28,6 @@ class VideoFeed:
         self.image_frame._image_cache = b
         self.set_last_frame(a)
 
+    def set_last_frame(self, frame):
+        self.last_frame = frame
+
