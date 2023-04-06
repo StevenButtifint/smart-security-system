@@ -34,3 +34,8 @@ class VideoFeed:
     def get_last_frame(self):
         return self.last_frame
 
+    def start_feed(self, source):
+        self.active = True
+        self.process = Process(target=image_capture, args=(self.queue, source,))
+        self.process.start()
+
