@@ -31,3 +31,6 @@ class VideoFeed:
     def set_last_frame(self, frame):
         self.last_frame = frame
 
+    def get_last_frame(self):
+        return self.last_frame
+
