@@ -1,6 +1,6 @@
 # Smart Security System
  
-### Demo Video
+### Demo Image Preview
 <img src="https://github.com/stevenbuttifint/smart-security-system/blob/main/demo/demo.JPG?raw=true" width=80% height=90%>
 
 
