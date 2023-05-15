@@ -1,11 +1,6 @@
-import numpy as np
 from multiprocessing import Process, Queue
-from queue import Empty
 import cv2
-import cv2 as cv
 from PIL import Image, ImageTk
-import time
-import tkinter as tk
 
 from .operations import image_capture
 
@@ -38,4 +33,7 @@ class VideoFeed:
         self.active = True
         self.process = Process(target=image_capture, args=(self.queue, source,))
         self.process.start()
+
+    def pause_feed(self):
+        self.active = False
 
