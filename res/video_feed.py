@@ -37,3 +37,6 @@ class VideoFeed:
     def pause_feed(self):
         self.active = False
 
+    def end_feed(self):
+        self.process.terminate()
+        self.image_frame.config(image='')
