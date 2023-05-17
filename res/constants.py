@@ -15,6 +15,8 @@ TOOLS_HEIGHT = 0.04
 # Directories
 APP_ICON_DIR = "res/icons/app_icon.ico"
 LAST_EVENT_DIR = "res/detections/last_event.png"
+MODEL_DIR = "res/yolov5s.onnx"
+CLASSES_DIR = "res/classes.txt"
 
 # Colours
 MAIN_BG = "#999999"
