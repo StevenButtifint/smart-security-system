@@ -20,3 +20,7 @@ CLASSES_DIR = "res/classes.txt"
 
 # Colours
 MAIN_BG = "#999999"
+
+
+# Detection
+OBJECT_TYPES = ["person", "bicycle", "car", "motorbike", "bus", "truck"]
