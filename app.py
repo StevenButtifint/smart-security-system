@@ -1,4 +1,5 @@
 import tkinter as tk
+from res.operations import *
 from res.constants import *
 
 
@@ -10,6 +11,7 @@ class GUI:
         self.window.title(TITLE)
         self.window.iconbitmap(resource_path(APP_ICON_DIR))
         self.window.config(bg=MAIN_BG)
+        set_style()
 
         video_frame = tk.Frame(self.window, bg="black")
         video_frame.place(relx=0.01, rely=0.055, relw=0.5, relh=0.5, anchor="nw")
