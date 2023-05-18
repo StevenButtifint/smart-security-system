@@ -14,3 +14,9 @@ class Detector:
         self.show_dot = False
         self.show_label = False
 
+    def set_dot(self, state):
+        self.show_dot = state
+
+    def set_label(self, state):
+        self.show_label = state
+
