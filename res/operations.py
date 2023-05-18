@@ -5,17 +5,18 @@ from tkinter import ttk
 
 from res.constants import *
 
+
 def image_capture(queue, source):
-   vidFile = cv2.VideoCapture(source)
-   while True:
-      try:
-         flag, frame = vidFile.read()
-         if flag == 0:
-            break
-         queue.put(frame)
-         cv2.waitKey(200)
-      except:
-         continue
+    vid_file = cv2.VideoCapture(source)
+    while True:
+        try:
+            flag, frame = vid_file.read()
+            if flag == 0:
+                break
+            queue.put(frame)
+            cv2.waitKey(200)
+        except:
+            continue
 
 
 def resource_path(relative_path):
