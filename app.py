@@ -1,4 +1,6 @@
 import tkinter as tk
+from res.video_feed import VideoFeed
+from res.detector import Detector
 from res.operations import *
 from res.constants import *
 
@@ -18,6 +20,8 @@ class GUI:
         self.video_label = tk.Label(master=video_frame, bg="black", fg="grey", text="Video Feed Disabled")
         self.video_label.place(relx=0.5, rely=0.5, relw=1, relh=1, anchor='c')
 
+        self.videoFeed = VideoFeed(self.video_label)
+        self.detector = Detector()
 
         tools_frame = tk.Frame(self.window, bg=TOOLBAR_BG)
         tools_frame.place(relx=0, rely=0, relw=1, relh=0.041, anchor="nw")
