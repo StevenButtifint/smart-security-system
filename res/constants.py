@@ -24,3 +24,10 @@ MAIN_BG = "#999999"
 
 # Detection
 OBJECT_TYPES = ["person", "bicycle", "car", "motorbike", "bus", "truck"]
+
+
+# Strings
+EMPTY_TYPE = "None"
+EMPTY_TIME = "--:--:--"
+EMPTY_DATE = "--/--/----"
+ABOUT_TEXT = "Log events in real time using\nobject detection.\n\n\nCreated 2023\nby Steven B.\n\n"
