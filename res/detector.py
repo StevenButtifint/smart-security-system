@@ -23,3 +23,8 @@ class Detector:
     def update_existing_objects(self, new_dots):
         self.existing_objects = new_dots
 
+
+    @staticmethod
+    def save_last_detection(image, box):
+        # save detected area  [ y1:y2, x1:x2 ]
+        cv2.imwrite(resource_path(LAST_EVENT_DIR), image[box[1]:box[1] + box[3], box[0]:box[0] + box[2]])
