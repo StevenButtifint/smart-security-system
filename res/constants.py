@@ -20,6 +20,17 @@ CLASSES_DIR = "res/classes.txt"
 
 # Colours
 MAIN_BG = "#999999"
+TOOLBAR_BG = "#777777"
+TOOLBAR_FG = "#cccccc"
+TREE_HEADING_BG = "#888888"
+TREE_HEADING_FG = "black"
+TREE_COLUMNS_BG = "#aaaaaa"
+NOTEBOOK_BG = TOOLBAR_BG
+TAB_BG = TOOLBAR_BG
+TAB_FG = "black"
+TAB_BG_SELECTED = "#bbbbbb"
+EVENT_PREVIEW = "#aaaaaa"
+EVENT_RECORD = "#bbbbbb"
 
 
 # Detection
