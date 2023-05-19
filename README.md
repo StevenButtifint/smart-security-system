@@ -1,3 +1,4 @@
+
 # Smart Security System
  
 ### Demo Image Preview
@@ -15,7 +16,9 @@
 
 ### Description
 
-This application provides a means for detecting objects live through a camera or local video file. Events get recorded and displayed to the user allowing them to manage and review events that have occurred. This application uses Python with Tkinter. Objects get identified using the YOLOv5 real-time object detection model. 
+This application enables real-time object detection through a live camera feed or local video file. 
+Users can manage and review past events. This application was created using Python and Tkinter. The selection of the YOLOv5 real-time object detection model enabled detections to be identified in real time.
+
 
 ---
 
