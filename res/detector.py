@@ -20,3 +20,6 @@ class Detector:
     def set_label(self, state):
         self.show_label = state
 
+    def update_existing_objects(self, new_dots):
+        self.existing_objects = new_dots
+
