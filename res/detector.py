@@ -69,6 +69,11 @@ class Detector:
         cv2.rectangle(image, (box[0], box[1] - 20), (box[0] + box[2], box[1]), (0, 255, 255), -1)
         cv2.putText(image, self.class_list[class_id], (box[0], box[1] - 10), cv2.FONT_HERSHEY_SIMPLEX, .5, (0, 0, 0))
 
+    def format_image(self, image):
+        input_image = self.format_yolo5(image)
+        blob = cv2.dnn.blobFromImage(input_image, 1 / 255.0, (640, 640), swapRB=True)
+        return blob, input_image
+
 
     @staticmethod
     def get_class_list():
