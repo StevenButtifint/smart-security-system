@@ -65,6 +65,10 @@ class Detector:
                     return True
         return False
 
+    def draw_detection_label(self, image, box, class_id):
+        cv2.rectangle(image, (box[0], box[1] - 20), (box[0] + box[2], box[1]), (0, 255, 255), -1)
+        cv2.putText(image, self.class_list[class_id], (box[0], box[1] - 10), cv2.FONT_HERSHEY_SIMPLEX, .5, (0, 0, 0))
+
 
     @staticmethod
     def get_class_list():
