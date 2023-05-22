@@ -58,6 +58,13 @@ class Detector:
         self.update_display_image(display_frame, image)
         return new_detections
 
+    def is_existing(self, box):
+        for dot in self.existing_objects:
+            if box[0] < dot[0] < box[0] + box[2]:
+                if box[1] < dot[1] < box[1] + box[3]:
+                    return True
+        return False
+
 
     @staticmethod
     def get_class_list():
