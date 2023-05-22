@@ -25,6 +25,12 @@ class Detector:
 
 
     @staticmethod
+    def get_class_list():
+        with open(resource_path(CLASSES_DIR), "r") as f:
+            class_list = [cname.strip() for cname in f.readlines()]
+        return class_list
+
+    @staticmethod
     def save_last_detection(image, box):
         # save detected area  [ y1:y2, x1:x2 ]
         cv2.imwrite(resource_path(LAST_EVENT_DIR), image[box[1]:box[1] + box[3], box[0]:box[0] + box[2]])
