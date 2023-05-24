@@ -79,6 +79,34 @@ class Detector:
         predictions = self.net.forward()
         return predictions[0]
 
+    def filter_predictions(self, predictions, input_image):
+        class_ids = []
+        confidences = []
+        boxes = []
+        x_factor, y_factor = self.get_x_y_factors(input_image)
+        class_id = None
+        for r in range(25200):
+            row = predictions[r]
+            confidence = row[4]
+            if confidence >= 0.4:
+
+                classes_scores = row[5:]
+                _, _, _, max_index = cv2.minMaxLoc(classes_scores)
+                class_id = max_index[1]
+                if classes_scores[class_id] > .25:
+                    confidences.append(confidence)
+                    class_ids.append(class_id)
+
+                    x, y, w, h = row[0].item(), row[1].item(), row[2].item(), row[3].item()
+                    left = int((x - 0.5 * w) * x_factor)
+                    top = int((y - 0.5 * h) * y_factor)
+                    width = int(w * x_factor)
+                    height = int(h * y_factor)
+                    box = np.array([left, top, width, height])
+                    boxes.append(box)
+
+        return class_ids, confidences, boxes, class_id
+
 
     @staticmethod
     def get_class_list():
