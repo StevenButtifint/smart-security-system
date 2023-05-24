@@ -74,6 +74,11 @@ class Detector:
         blob = cv2.dnn.blobFromImage(input_image, 1 / 255.0, (640, 640), swapRB=True)
         return blob, input_image
 
+    def get_predictions(self, blob):
+        self.net.setInput(blob)
+        predictions = self.net.forward()
+        return predictions[0]
+
 
     @staticmethod
     def get_class_list():
