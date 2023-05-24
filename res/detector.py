@@ -107,6 +107,13 @@ class Detector:
 
         return class_ids, confidences, boxes, class_id
 
+    @staticmethod
+    def update_display_image(display_frame, image):
+        a = Image.fromarray(image)
+        b = ImageTk.PhotoImage(image=a)
+        display_frame.configure(image=b)
+        display_frame._image_cache = b
+
 
     @staticmethod
     def get_class_list():
