@@ -138,6 +138,10 @@ class Detector:
         result[0:row, 0:col] = frame
         return result
 
+    @staticmethod
+    def draw_detection_box(image, box):
+        cv2.rectangle(image, box, (0, 255, 255), 1)
+
 
     @staticmethod
     def get_class_list():
