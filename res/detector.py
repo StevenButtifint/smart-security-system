@@ -130,6 +130,14 @@ class Detector:
         y_factor = image_height / 640
         return x_factor, y_factor
 
+    @staticmethod
+    def format_yolo5(frame):
+        row, col, _ = frame.shape
+        _max = max(col, row)
+        result = np.zeros((_max, _max, 3), np.uint8)
+        result[0:row, 0:col] = frame
+        return result
+
 
     @staticmethod
     def get_class_list():
