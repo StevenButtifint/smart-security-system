@@ -123,6 +123,13 @@ class Detector:
             result_boxes.append(boxes[i])
         return result_class_ids, result_boxes
 
+    @staticmethod
+    def get_x_y_factors(input_image):
+        image_width, image_height, _ = input_image.shape
+        x_factor = image_width / 640
+        y_factor = image_height / 640
+        return x_factor, y_factor
+
 
     @staticmethod
     def get_class_list():
