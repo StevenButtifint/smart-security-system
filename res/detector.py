@@ -114,6 +114,15 @@ class Detector:
         display_frame.configure(image=b)
         display_frame._image_cache = b
 
+    @staticmethod
+    def get_detection_results(indexes, class_ids, boxes):
+        result_class_ids = []
+        result_boxes = []
+        for i in indexes:
+            result_class_ids.append(class_ids[i])
+            result_boxes.append(boxes[i])
+        return result_class_ids, result_boxes
+
 
     @staticmethod
     def get_class_list():
