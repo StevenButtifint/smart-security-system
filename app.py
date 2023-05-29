@@ -30,6 +30,13 @@ class GUI:
         source_label.config(font=font.Font(slant="italic", size=13))
         source_label.place(relx=0.005, rely=0.06, anchor="nw")
 
+        self.video_feed_option = tk.StringVar(self.window)
+        self.video_feed_option.set(VIDEO_FEED_OPTIONS[0])
+
+        video_feed_menu = tk.OptionMenu(self.window, self.video_feed_option, *VIDEO_FEED_OPTIONS)
+        video_feed_menu.config(highlightthickness=0, bg=TOOLBAR_BG)
+        video_feed_menu.place(relx=0.06, rely=0, relw=0.07, relh=TOOLS_HEIGHT, anchor="nw")
+
 
         detector_label = tk.Label(tools_frame, text="Detector:", bg=TOOLBAR_BG, fg=TOOLBAR_FG)
         detector_label.config(font=font.Font(slant="italic", size=13))
