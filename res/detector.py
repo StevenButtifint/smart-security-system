@@ -146,6 +146,9 @@ class Detector:
     def save_dot(box, new_dots):
         new_dots.append((box[0] + box[2] // 2, box[1] + box[3] // 2))
 
+    @staticmethod
+    def draw_dot(image, box):
+        cv2.rectangle(image, (box[0] + box[2] // 2, box[1] + box[3] // 2, 2, 2), (0, 255, 0), 2)
 
     @staticmethod
     def get_class_list():
