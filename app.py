@@ -37,6 +37,8 @@ class GUI:
         video_feed_menu.config(highlightthickness=0, bg=TOOLBAR_BG)
         video_feed_menu.place(relx=0.06, rely=0, relw=0.07, relh=TOOLS_HEIGHT, anchor="nw")
 
+        self.video_feed_button = tk.Button(master=self.window, text='Enable Video Feed', bg=TOOLBAR_BG, command=lambda: self.toggle_video_feed())
+        self.video_feed_button.place(relx=0.13, rely=0.0, relw=0.1, relh=TOOLS_HEIGHT, anchor="nw")
 
         detector_label = tk.Label(tools_frame, text="Detector:", bg=TOOLBAR_BG, fg=TOOLBAR_FG)
         detector_label.config(font=font.Font(slant="italic", size=13))
