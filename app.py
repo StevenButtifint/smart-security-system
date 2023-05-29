@@ -1,4 +1,8 @@
 import tkinter as tk
+import tkinter.font as font
+from datetime import datetime
+
+from res.event_widget import EventWidget
 from res.video_feed import VideoFeed
 from res.detector import Detector
 from res.operations import *
