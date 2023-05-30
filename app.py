@@ -48,6 +48,13 @@ class GUI:
         detector_label.config(font=font.Font(slant="italic", size=13))
         detector_label.place(relx=0.24, rely=0.06, anchor="nw")
 
+        self.detector_option = tk.StringVar(self.window)
+        self.detector_option.set(DETECTOR_OPTIONS[0])
+
+        detector_menu = tk.OptionMenu(self.window, self.detector_option, *DETECTOR_OPTIONS)
+        detector_menu.config(highlightthickness=0, bg=TOOLBAR_BG)
+        detector_menu.place(relx=0.305, rely=0, relw=0.072, relh=TOOLS_HEIGHT, anchor="nw")
+
 
         events_label = tk.Label(tools_frame, text="Events Log", bg=TOOLBAR_BG, fg="white")
         events_label.config(font=font.Font(slant="italic", size=15))
