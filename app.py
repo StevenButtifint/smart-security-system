@@ -61,6 +61,14 @@ class GUI:
         events_label.place(relx=0.71, rely=0.037, anchor="nw")
 
 
+    def event_selected(self, event):
+        row_id = self.events_view.focus()
+        row_content = self.events_view.item(row_id).get("values")
+        self.selected_event.set_date(row_content[0])
+        self.selected_event.set_time(row_content[1])
+        self.selected_event.set_type(row_content[2])
+        self.notebook.select(self.tabs[1])
+
 
 if __name__ == '__main__':
     root = tk.Tk()
