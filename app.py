@@ -65,6 +65,9 @@ class GUI:
         events_label.config(font=font.Font(slant="italic", size=15))
         events_label.place(relx=0.71, rely=0.037, anchor="nw")
 
+        details_frame = tk.Frame(self.window)
+        details_frame.place(relx=0, rely=1, relw=0.52, relh=0.43, anchor="sw")
+
 
     def event_selected(self, event):
         row_id = self.events_view.focus()
