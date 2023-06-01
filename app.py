@@ -55,6 +55,9 @@ class GUI:
         detector_menu.config(highlightthickness=0, bg=TOOLBAR_BG)
         detector_menu.place(relx=0.305, rely=0, relw=0.072, relh=TOOLS_HEIGHT, anchor="nw")
 
+        config_button = tk.Button(master=self.window, text='Options', bg=TOOLBAR_BG, command=lambda: self.notebook.select(self.tabs[2]))
+        config_button.place(relx=0.377, rely=0.0, relw=0.055, relh=TOOLS_HEIGHT, anchor="nw")
+
 
         events_label = tk.Label(tools_frame, text="Events Log", bg=TOOLBAR_BG, fg="white")
         events_label.config(font=font.Font(slant="italic", size=15))
