@@ -68,6 +68,16 @@ class GUI:
         details_frame = tk.Frame(self.window)
         details_frame.place(relx=0, rely=1, relw=0.52, relh=0.43, anchor="sw")
 
+        self.notebook = ttk.Notebook(details_frame)
+        self.tabs = []
+
+        for tab_name in TAB_OPTIONS:
+            new_tab = tk.Frame(self.notebook, bg=TAB_BG_SELECTED)
+            self.notebook.add(new_tab, text=tab_name)
+            self.tabs.append(new_tab)
+
+        self.notebook.pack(expand=1, fill="both")
+
 
     def event_selected(self, event):
         row_id = self.events_view.focus()
