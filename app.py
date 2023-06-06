@@ -117,6 +117,15 @@ class GUI:
 
         self.window.mainloop()
 
+    def toggle_video_feed(self):
+        if self.videoFeed.active:
+            self.stop_video_feed()
+            self.video_feed_button.config(bg=TOOLBAR_BG, text='Enable Video Feed')
+
+        else:
+            self.start_video_feed()
+            self.video_feed_button.config(bg=TOOLBAR_BG, text='Disable Video Feed')
+
 
     def event_selected(self, event):
         row_id = self.events_view.focus()
