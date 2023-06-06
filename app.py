@@ -78,6 +78,23 @@ class GUI:
 
         self.notebook.pack(expand=1, fill="both")
 
+        self.last_event = EventWidget(self.tabs[0])
+        self.selected_event = EventWidget(self.tabs[1])
+
+        events_label = tk.Label(self.tabs[2], text="Detector Options", bg=TAB_BG_SELECTED, fg="black")
+        events_label.config(font=font.Font(slant="italic", size=15))
+        events_label.place(relx=0.03, rely=0.1, anchor="w")
+
+        dot_check = tk.BooleanVar(False)
+        dot_checkbox = tk.Checkbutton(self.tabs[2], text="Show Detection Dots", background=TAB_BG_SELECTED, variable=dot_check)
+        dot_checkbox.config(command=lambda: self.detector.set_dot(dot_check.get()), font=font.Font(size=14))
+        dot_checkbox.place(relx=0.03, rely=0.2, anchor='w')
+
+        label_check = tk.BooleanVar(False)
+        label_checkbox = tk.Checkbutton(self.tabs[2], text="Show Detection Labels", background=TAB_BG_SELECTED, variable=label_check)
+        label_checkbox.config(command=lambda: self.detector.set_label(label_check.get()), font=font.Font(size=14))
+        label_checkbox.place(relx=0.03, rely=0.3, anchor='w')
+
 
     def event_selected(self, event):
         row_id = self.events_view.focus()
