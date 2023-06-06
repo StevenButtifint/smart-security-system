@@ -99,6 +99,24 @@ class GUI:
         about_label.config(font=font.Font(slant="italic", size=15))
         about_label.place(relx=0.5, rely=0.2, anchor="n")
 
+        events_frame = tk.Frame(self.window)
+        events_frame.place(relx=1, rely=1, relw=0.48, relh=0.961, anchor="se")
+
+        self.events_view = ttk.Treeview(events_frame, columns=EVENT_COLUMN_NAMES, show='headings', style="Custom.Treeview")
+        for index, name in enumerate(EVENT_COLUMN_NAMES):
+            self.events_view.heading(name, text=name)
+            self.events_view.column(name, width=EVENT_COLUMN_WIDTHS[index], anchor='c')
+        self.events_view.pack(side=tk.LEFT, fill=tk.BOTH, expand=tk.YES)
+        self.events_view.bind('<Button-1>', self.event_selected)
+        self.events_view.tag_configure('event', background=EVENT_RECORD)
+        self.events_view.tag_configure('alert', background='red')
+
+        scrollbar = ttk.Scrollbar(events_frame, orient=tk.VERTICAL, command=self.events_view.yview)
+        self.events_view.configure(yscroll=scrollbar.set)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.BOTH)
+
+        self.window.mainloop()
+
 
     def event_selected(self, event):
         row_id = self.events_view.focus()
