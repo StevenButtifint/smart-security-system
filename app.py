@@ -95,6 +95,10 @@ class GUI:
         label_checkbox.config(command=lambda: self.detector.set_label(label_check.get()), font=font.Font(size=14))
         label_checkbox.place(relx=0.03, rely=0.3, anchor='w')
 
+        about_label = tk.Label(self.tabs[3], text=ABOUT_TEXT, bg=TAB_BG_SELECTED, fg="black")
+        about_label.config(font=font.Font(slant="italic", size=15))
+        about_label.place(relx=0.5, rely=0.2, anchor="n")
+
 
     def event_selected(self, event):
         row_id = self.events_view.focus()
