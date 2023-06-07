@@ -126,6 +126,30 @@ class GUI:
             self.start_video_feed()
             self.video_feed_button.config(bg=TOOLBAR_BG, text='Disable Video Feed')
 
+    def update_feed(self):
+        if self.videoFeed.active:
+            self.videoFeed.update_image()
+
+            new_detections = self.detector.scan_frame(self.videoFeed.get_last_frame(), self.video_label)
+
+            if new_detections:
+                current_dt = datetime.now()
+                current_date = current_dt.strftime("%d/%m/%Y")
+                current_time = current_dt.strftime("%H:%M:%S")
+
+                for detection in new_detections:
+                    self.events_view.insert("", 'end', values=(current_date, current_time, detection[0], detection[1]), tag='event')
+
+                self.last_event.set_type(new_detections[-1][0])
+                self.last_event.set_date(current_date)
+                self.last_event.set_time(current_time)
+                self.last_event.set_preview()
+
+            self.window.update()
+            self.window.after(0, func=lambda: self.update_feed())
+        else:
+            self.videoFeed.end_feed()
+
 
     def event_selected(self, event):
         row_id = self.events_view.focus()
