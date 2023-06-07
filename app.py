@@ -150,6 +150,17 @@ class GUI:
         else:
             self.videoFeed.end_feed()
 
+    def start_video_feed(self):
+        if self.video_feed_option.get() == VIDEO_FEED_OPTIONS[0]:
+            self.videoFeed.start_feed(0)
+        elif self.video_feed_option.get() == VIDEO_FEED_OPTIONS[1]:
+            self.videoFeed.start_feed(1)
+        elif self.video_feed_option.get() == VIDEO_FEED_OPTIONS[2]:
+            self.videoFeed.start_feed(2)
+        elif self.video_feed_option.get() == VIDEO_FEED_OPTIONS[3]:
+            self.videoFeed.start_feed(resource_path("res/local.mp4"))
+        self.update_feed()
+
 
     def event_selected(self, event):
         row_id = self.events_view.focus()
