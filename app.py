@@ -161,6 +161,9 @@ class GUI:
             self.videoFeed.start_feed(resource_path("res/local.mp4"))
         self.update_feed()
 
+    def stop_video_feed(self):
+        self.videoFeed.pause_feed()
+
 
     def event_selected(self, event):
         row_id = self.events_view.focus()
