@@ -164,6 +164,11 @@ class GUI:
     def stop_video_feed(self):
         self.videoFeed.pause_feed()
 
+    def clear_event_log(self):
+        for e in self.events_view.get_children():
+            self.events_view.delete(e)
+        self.last_event.clear_labels()
+        self.window.update()
 
     def event_selected(self, event):
         row_id = self.events_view.focus()
